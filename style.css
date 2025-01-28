@@ -1,0 +1,63 @@
+body {
+   
+    margin:auto;
+    background-color: rgb(0, 0, 0);
+    background-image: url(https://img.freepik.com/free-photo/office-desk-table-with-pencils-supplies-cup_155003-10186.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+   
+}
+.body{
+    border: 3px ridge white;
+    display: flex;
+    flex-direction: column;
+    margin: 20% auto;
+    border-radius: 20px;
+    min-width: 400px;
+    width: 70%;
+    padding: 20px;
+    background-color: rgba(207, 201, 201, 0.348);
+}
+.clock{
+  
+   
+    text-align: center;
+   padding: 30px;
+   margin: 20px;
+
+}
+.clock input{
+    padding: 10px 5px ;
+    font-size: large;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    border-radius: 10px;
+    outline: none;
+
+}
+.clock input:focus{
+    outline: none;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button button{
+    padding: 10px 30px;
+    margin:20px;
+    font-size: larger;
+    font-weight: 500;
+    border-radius: 20px;
+    transition: ease 1s;
+    border:none
+  
+    
+}
+.button button:hover{
+    color: white;
+    background-color: black;
+    
+}
