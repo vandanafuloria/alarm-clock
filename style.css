@@ -12,7 +12,7 @@ body {
     border: 3px ridge white;
     display: flex;
     flex-direction: column;
-    margin: 20% auto;
+    margin: 10% auto;
     border-radius: 20px;
     min-width: 400px;
     width: 70%;
@@ -28,13 +28,15 @@ body {
 
 }
 .clock input{
-    padding: 10px 5px ;
-    font-size: large;
-    font-weight: 600;
+   width: 25%;
+    font-size: 4rem;
+    font-weight: 900;
     text-align: center;
     margin: 0;
     border-radius: 10px;
     outline: none;
+    background-color: black;
+    color:white;
 
 }
 .clock input:focus{
@@ -42,8 +44,9 @@ body {
 }
 .button{
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
+   
 }
 .button button{
     padding: 10px 30px;
@@ -52,12 +55,13 @@ body {
     font-weight: 500;
     border-radius: 20px;
     transition: ease 1s;
-    border:none
+    border:1px black solid;
+
   
-    
 }
 .button button:hover{
     color: white;
     background-color: black;
+    border:1px black dotted;
     
 }

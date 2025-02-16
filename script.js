@@ -5,6 +5,12 @@ const startEl = document.getElementById('start')
 const pauseEl = document.getElementById('pause');
 const stopEl = document.getElementById('stop');
 
+
+let pause = false;
+
+const alarmAudioEl = new Audio('./assets/test.wav');
+
+const tiktikEl = new Audio('./assets/tiktik.mp3');
 let handler = 0 
  let remainingSec = 0;
 let second;
@@ -20,22 +26,24 @@ function timeLeft(second)
     let secs = getTwoDigitNumber(second % 60);
 
    
-  
-   
     hourEl.value = hrs;
     minuteEl.value = mins;
     secondEl.value = secs;
+    tiktikEl.play();
+    // if(pause == false)
 }
 
 
 
 function updateTimer(){
-    if(handler != 0)
-    {
-     
+    if(pause == true) return ;
+    
+    if(handler != 0){
+
         remainingSec--;
         if(remainingSec == 0)
         {
+            alarmAudioEl.play();
             clearInterval(handler);
         }
         timeLeft(remainingSec);
@@ -46,6 +54,7 @@ function updateTimer(){
 
 
 function startTimer(second){
+    pause = false;
     if(handler!= 0)
     {
         clearInterval(handler)
@@ -92,11 +101,44 @@ function stopTimer(){
     hourEl.value = "00";
     minuteEl.value = "00";
     secondEl.value = "00";
+
+    alarmAudioEl.pause();
+}
+function pauseTimer() {
+   
+
+    if(handler === 0) {
+        pauseEl.innerText = "Pause";
+        return;
+    }
+
+    if(pause == false){
+        pause = true;
+        pauseEl.innerText = "Resume";
+    }
+    else {
+        console.log("Resuming timer")
+        pauseEl.innerText = "Pause";
+        pause = false;
+    }
+
+
+    // if(handler != 0){
+    //     if(pause == true){
+    //         pauseEl.innerText = "Resume";
+    //         pause = false;
+    //     }
+    //     else {
+    //         pause = true;
+    //         pauseEl.innerText = "Pause"
+    //     }
+    // }
 }
 
 
 
 startEl.addEventListener('click', convertIntoSeconds)
 stopEl.addEventListener('click', stopTimer);
+pauseEl.addEventListener('click', pauseTimer);
 
 
